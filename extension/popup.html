@@ -19,11 +19,13 @@
   <body>
     <h3>Bookmark Archiver</h3>
     <h5>Archive your bookmarks with archive.org</h5>
-    <p>The archiving process will only run while this window is open. Please do not quit until it has finished.</p>
+    <p>The archiving process will only run while this window is open.</p>
     <p>The result link will take you to archive.org's Wayback Machine for the successfully archived URL.</p>
-    <button id="bookmarksButton">Archive Bookmarks</button>
-    <button id="currentPageButton"">Archive Current Page</button>
-    <button id="clearResults"">Clear Results</button>
+    <div id="wayBackUrl"></div>
+    <br>
+    <button id="bookmarksButton">Archive <b>ALL</b> Bookmarks</button>
+    <button id="currentPageButton">Archive Current Page</button>
+    <button id="clearResults">Clear Results</button>
     <br><br>
     <h4>Features not implemented yet</h4>
     <input type="checkbox" id="saveResult" disabled="disabled">Save results to a new bookmark folder<br>
