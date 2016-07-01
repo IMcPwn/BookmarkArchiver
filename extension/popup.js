@@ -25,9 +25,9 @@ function archive(url) {
         var xhr = event.target;
 
         if (xhr.readyState === 4 && xhr.status === 200) {
-            renderStatus("<b>Archived</b><br>" + "<a href='https://web.archive.org/web/*/" + url + "'target='_blank' rel='noreferrer'>" + url + "</a>");
+            appendResult("<b>Archived</b><br>" + "<a href='https://web.archive.org/web/*/" + url + "'target='_blank' rel='noreferrer'>" + url + "</a>");
         } else if (xhr.readyState === 4) {
-            renderStatus("<b>Error archiving</b>\n" + url);
+            appendResult("<b>Error archiving</b>\n" + url);
         }
     };
 }
@@ -55,7 +55,7 @@ function clearResults() {
     document.getElementById('status').textContent = "";
 }
 
-function renderStatus(statusText) {
+function appendResult(statusText) {
     if (document.getElementById('resultsMessage').innerHTML == "") {
         document.getElementById('resultsMessage').innerHTML = "<h4>Results<br>--------</h4>";
     }
@@ -63,18 +63,21 @@ function renderStatus(statusText) {
     row.innerHTML = statusText;
 }
 
-function isChecked() {
+function saveIsChecked() {
+    /* Leave always disabled until Save results to a new bookmark folder is functional
     if (document.getElementById('saveResult').checked) {
         return true;
     } else {
         return false;
     }
+    */
+    return false;
 }
 
 function archiveCurrentPage() {
     getCurrentTabUrl(function(bookmark) {
         archive(bookmark);
-        if (isChecked()) {
+        if (saveIsChecked()) {
             createBookmark(bookmark.title, bookmark.url);
         }
     });
@@ -105,7 +108,7 @@ function archiveBookmark(bookmarks) {
     bookmarks.forEach(function(bookmark) {
         if (bookmark.url) {
             archive(bookmark.url);
-            if (isChecked()) {
+            if (saveIsChecked()) {
                 createBookmark(bookmark.title, bookmark.url);
             }
         }
