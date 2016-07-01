@@ -25,7 +25,7 @@ function archive(url) {
         var xhr = event.target;
 
         if (xhr.readyState === 4 && xhr.status === 200) {
-            renderStatus("<b>Archived</b>\n" + url);
+            renderStatus("<b>Archived</b><br>" + "<a href='https://web.archive.org/web/*/" + url + "'target='_blank' rel='noreferrer'>" + url + "</a>");
         } else if (xhr.readyState === 4) {
             renderStatus("<b>Error archiving</b>\n" + url);
         }
