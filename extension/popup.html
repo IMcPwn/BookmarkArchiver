@@ -3,23 +3,33 @@
   <head>
     <title>Bookmark Archiver</title>
     <style>
-      body {
+    body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+        width: 400px;
       }
       #status {
         white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
+        overflow: scroll;
+        width: 400px;
       }
     </style>
     <script src="popup.js"></script>
   </head>
   <body>
+    <h3>Bookmark Archiver</h3>
+    <h5>Archive your bookmarks with archive.org</h5>
+    <p>The archiving process will only run while this window is open. Please do not quit until it has finished.</p>
     <button id="bookmarksButton">Archive Bookmarks</button>
     <button id="currentPageButton"">Archive Current Page</button>
-    <div id="status"></div>
+    <button id="clearResults"">Clear Results</button>
+    <br><br>
+    <h4>Features not implemented yet</h4>
+    <input type="checkbox" id="saveResult" disabled="disabled">Save results to a new bookmark folder<br>
+    <input type="checkbox" id="automaticArchive" disabled="disabled">Automatically archive new bookmarks<br>
+    <br>
+    <div id="resultsMessage"></div>
+    <table id="status"></table>
   </body>
 </html>
 
