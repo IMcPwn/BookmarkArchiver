@@ -140,4 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('clearResults').onclick = function() {
         clearResults();
     };
+    getCurrentTabUrl(function(bookmark) {
+        document.getElementById('wayBackUrl').innerHTML = "<a href='https://web.archive.org/web/*/" + bookmark + "'target='_blank' rel='noreferrer'>View current page on Wayback Machine</a>";
+    });
 });
