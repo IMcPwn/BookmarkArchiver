@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Bookmark Archiver",
+  "description": "Archive your bookmarks using archive.org",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "bookmarks",
+    "https://web.archive.org/"
+  ]
+}
