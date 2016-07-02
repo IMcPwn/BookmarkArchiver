@@ -57,7 +57,7 @@ function clearResults() {
 
 function appendResult(statusText) {
     if (document.getElementById('resultsMessage').innerHTML == "") {
-        document.getElementById('resultsMessage').innerHTML = "<h4>Results<br>--------</h4>";
+        document.getElementById('resultsMessage').innerHTML = "<h4>Results<br><hr></h4>";
     }
     var row = document.getElementById('status').insertRow(-1);
     row.innerHTML = statusText;
@@ -113,7 +113,7 @@ function archiveBookmark(bookmarks) {
             }
         }
         if (bookmark.children) {
-            archiveBookmark(bookmark.children); 
+            archiveBookmark(bookmark.children);
         }
     });
 }
@@ -142,6 +142,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     document.getElementById('clearResults').onclick = function() {
         clearResults();
+    };
+    document.getElementById('scrollBottom').onclick = function() {
+        window.scrollTo(0, document.body.scrollHeight);
     };
     getCurrentTabUrl(function(bookmark) {
         document.getElementById('wayBackUrl').innerHTML = "<a href='https://web.archive.org/web/*/" + bookmark + "'target='_blank' rel='noreferrer'>View current page on Wayback Machine</a>";
