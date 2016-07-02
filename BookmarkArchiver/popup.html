@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Bookmark Archiver</title>
     <style>
-    body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-        width: 400px;
-      }
-      #status {
-        white-space: pre;
-        overflow: scroll;
-        width: 400px;
-      }
+        body {
+            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+            width: 300px;
+        }
+        #status {
+            white-space: pre;
+            overflow: scroll;
+            width: 300px;
+        }
+        #clearResults {
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+        }
+        #scrollBottom {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+        }
     </style>
     <script src="popup.js"></script>
-  </head>
-  <body>
-    <h3>Bookmark Archiver</h3>
-    <h5>Archive your bookmarks with archive.org</h5>
-    <p>The archiving process will only run while this window is open.</p>
-    <p>The result link will take you to archive.org's Wayback Machine for the successfully archived URL.</p>
+</head>
+
+<body>
+    <p>Currently, the archiving process will only run while this window is open.</p>
+    <p>The result link will take you to the Wayback Machine.</p>
     <div id="wayBackUrl"></div>
     <br>
     <button id="bookmarksButton">Archive <b>ALL</b> Bookmarks</button>
     <button id="currentPageButton">Archive Current Page</button>
-    <button id="clearResults">Clear Results</button>
-    <br><br>
-    <h4>Features not implemented yet</h4>
-    <input type="checkbox" id="saveResult" disabled="disabled">Save results to a new bookmark folder<br>
-    <input type="checkbox" id="automaticArchive" disabled="disabled">Automatically archive new bookmarks<br>
+    <br>
     <br>
     <div id="resultsMessage"></div>
     <table id="status"></table>
-  </body>
-</html>
+    <br>
+    <br>
+    <button id="scrollBottom">Scroll to Bottom</button>
+    <button id="clearResults">Clear Results</button>
+</body>
 
+</html>
